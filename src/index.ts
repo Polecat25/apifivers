@@ -4,8 +4,8 @@ import cors from 'cors'
 //import router from './src/routes/post.route';
 //import dbconnect from './src/config/mongo';
 
-import router from './src/routes/post.route';
-import dbconnect from './src/config/mongo';
+import router from './routes/post.route';
+import dbconnect from './config/mongo';
 
 
 
