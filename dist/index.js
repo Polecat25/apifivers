@@ -1,0 +1,2 @@
+"use strict";
+//EN CASO DE HABER MUCHAS RUTAS 
