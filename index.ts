@@ -1,8 +1,11 @@
 import express, { json, Request, Response } from 'express'
 import dovnet from 'dotenv'
 import cors from 'cors'
-import router from './routes/post.route';
-import dbconnect from './config/mongo';
+//import router from './src/routes/post.route';
+//import dbconnect from './src/config/mongo';
+
+import router from './src/routes/post.route';
+import dbconnect from './src/config/mongo';
 
 
 
