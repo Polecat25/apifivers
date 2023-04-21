@@ -1,7 +1,7 @@
 FROM node:18-alpine3.16
 RUN npm install -g ts-node
 
-WORKDIR /usr/src/app
+WORKDIR /src
 
 COPY package*.json ./
 #NPM CI SIRVE PARA INSTALR LO QUYE ESTA DENTRO DEL PACKAGE-LOCK,JOSN
