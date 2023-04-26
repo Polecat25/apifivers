@@ -1,4 +1,4 @@
-import Posts from "../models/post.model";
+import Posts from "../../models/post.model";
 
 const GetAllPost = async ()=>{
     const data =  await Posts.find({})

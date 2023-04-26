@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import Posts from '../models/post.model';
-import { GetAllPost, GetOnePost, NewPost, UpdatePost, DeletePost } from '../services/post.service';
-import handlerError from '../utilities/errorHandler';
+import Posts from '../../models/post.model';
+import { GetAllPost, GetOnePost, NewPost, UpdatePost, DeletePost } from '../../services/mg/post.service';
+import handlerError from '../../utilities/errorHandler';
 
 
 const GetTodoPost = async (req: Request, res: Response)=>{
