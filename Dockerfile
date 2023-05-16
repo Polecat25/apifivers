@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "src/dist/index.js"]
+CMD ["npm", "run", "start"]
