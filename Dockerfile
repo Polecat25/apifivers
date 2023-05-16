@@ -1,7 +1,7 @@
 FROM node:18-alpine3.16
 
 
-WORKDIR /
+WORKDIR /src
 
 COPY package*.json ./
 #NPM CI SIRVE PARA INSTALR LO QUYE ESTA DENTRO DEL PACKAGE-LOCK,JOSN
@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "dist/index.js"]
+CMD ["node", "src/dist/index.js"]
