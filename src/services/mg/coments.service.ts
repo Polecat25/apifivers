@@ -1,4 +1,4 @@
-import Coments from "../../models/coments.model";
+import Coments from "../../models/mg/coments.model";
 
 const newComment = async (data:any)=>{
     const comment = await Coments.create(data)

@@ -1,9 +1,10 @@
 import mongoose, { Schema } from "mongoose";
+import { iPost } from "../interfaces/post.interface";
 
-const postSchema = new Schema({
-    author: {
+const postSchema = new Schema<iPost>({
+    id_author: {
         type: String,
-        require: true,       
+        required: true,       
     },
     title:{
         type: String, 
@@ -14,7 +15,7 @@ const postSchema = new Schema({
     },
     image: {
         type: String, 
-        require: true
+        required: true
     }
 },
 {

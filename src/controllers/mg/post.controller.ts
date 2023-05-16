@@ -1,5 +1,7 @@
+import { RequestMod } from './../../models/interfaces/RequestMod';
+import { iPost } from './../../models/interfaces/post.interface';
 import { Request, Response } from 'express';
-import Posts from '../../models/post.model';
+import Posts from '../../models/mg/post.model';
 import { GetAllPost, GetOnePost, NewPost, UpdatePost, DeletePost } from '../../services/mg/post.service';
 import handlerError from '../../utilities/errorHandler';
 
@@ -33,17 +35,18 @@ const GetUnPost = async (req: Request, res: Response)=>{
 }
 const NuevoPost = async (req: Request, res: Response)=>{
    try { 
-    const {body} = req
-    const nuevoPost = await NewPost(body)
+    const {id_author,title,description,image}:iPost = req.body
+    const nuevoPost = await NewPost({id_author,title,description,image})
    res.status(200).send(nuevoPost)
    } catch (error:any) {
     handlerError(res, 500, "No se pudo hacer el registro", error.message)
    }
 }
-const ModificarPost = async (req: Request, res: Response)=>{
+const ModificarPost = async (req: RequestMod, res: Response)=>{
   try { 
     
-    const {body} = req
+    const {body, datauser} = req
+    
     const toModify = await UpdatePost(req.params.id, body)
     if (toModify === null) {
         handlerError(res, 400, "No se pudo actualizar o no se pudo encontrar el Post")  
@@ -54,7 +57,7 @@ const ModificarPost = async (req: Request, res: Response)=>{
     handlerError(res, 500, "No se pudo actualizar o no se pudo encontrar el Post", error.message)
   }
 }
-const BorrarPost = async (req: Request, res: Response)=>{
+const BorrarPost = async (req: RequestMod, res: Response)=>{
     try {        
        
         const deletion = await DeletePost(req.params.id)

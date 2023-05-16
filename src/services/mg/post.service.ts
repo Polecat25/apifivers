@@ -1,4 +1,5 @@
-import Posts from "../../models/post.model";
+import { iPost } from './../../models/interfaces/post.interface';
+import Posts from "../../models/mg/post.model";
 
 const GetAllPost = async ()=>{
     const data =  await Posts.find({})
@@ -8,7 +9,7 @@ const GetOnePost = async (id:any)=>{
     const data =  await Posts.findOne({_id:id})
     return data
 }
-const NewPost = async (data:any)=>{
+const NewPost = async (data:iPost)=>{
     const newPost =  await Posts.create(data)
     return newPost
 }

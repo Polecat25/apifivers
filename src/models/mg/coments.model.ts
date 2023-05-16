@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const comentSchema = new Schema({
-    author: {
+    id_author: {
         type: String,
         
     },
@@ -11,7 +11,7 @@ const comentSchema = new Schema({
     } ,
     idfrom: {
         type: String,
-        require:true
+        required:true
     },
     
 },
