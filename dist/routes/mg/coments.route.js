@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const coment_controller_1 = require("../../controllers/mg/coment.controller");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const role_middleware_1 = require("../../middlewares/role.middleware");
+const routerC = (0, express_1.Router)();
+routerC.get('/comments/:id', coment_controller_1.getTodoComentario);
+routerC.post('/comments', coment_controller_1.NuevoCometario);
+routerC.delete('/comments/:id', auth_middleware_1.VerificarSesion, (0, role_middleware_1.VerificarRol)(['USER', 'ADMIN']), coment_controller_1.BorrarComentario);
+exports.default = routerC;
