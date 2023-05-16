@@ -1,5 +1,5 @@
 FROM node:18-alpine3.16
-RUN npm install -g ts-node
+
 
 WORKDIR /src
 
@@ -12,7 +12,7 @@ ENV MONGO_DB=$MONGO_DB
 
 COPY . .
 #RUN npm install 
-RUN npm run build
+
 EXPOSE 5000
 
-CMD ["npm", "start"]
+CMD ["node", "dist/index.js"]
