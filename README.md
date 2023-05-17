@@ -1,5 +1,5 @@
 # apifivers
-es un API REST hecha en node.js (v18) para demostración del pequeño proyecto "FiversYeih", un intento protocolario de red social 
+es un API REST hecha en node.js (v18) y MONGODB para demostración del pequeño proyecto "FiversYeih", un intento protocolario de red social 
 <h1>API F I V E R Y E I H !</h1>
 <table>
   <tr>
